@@ -1,0 +1,54 @@
+<?php
+$this->headTitle('Sign in');
+
+$form->get('email')->setAttributes([
+            'class' => 'form-control',
+            'placeholder' => 'E-mail',
+            'required' => true,
+            'autofocus' => true,
+            'id' => 'inputEmail'
+        ])
+        ->setLabelAttributes([
+            'class' => 'sr-only'
+        ]);
+
+$form->get('password')->setAttributes([
+            'class' => 'form-control',
+            'placeholder' => 'Senha',
+            'required' => true,
+        ])
+        ->setLabelAttributes([
+            'class' => 'sr-only'
+        ]);
+?>
+
+<div class="card col-4 mx-auto mt-5 p-4">
+    <div class="card-container">
+        <!--<img id="profile-img" class="profile-img-card mx-auto d-block img-thumbnail" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />-->
+        <img id="profile-img" class="profile-img-card mx-auto d-block" src="img/logo.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin" method="post">
+            <?php if ($isLoginError): ?>
+                <div class="alert alert-warning" role="alert">
+                    Usuário e/ou senha incorretos.
+                </div>
+            <?php endif; ?>
+            <span id="reauth-email" class="reauth-email"></span>
+            <?= $this->formLabel($form->get('email')); ?>
+            <?= $this->formElement($form->get('email')); ?>
+            <?= $this->formLabel($form->get('password')); ?>
+            <?= $this->formElement($form->get('password')); ?>
+            <div class="checkbox" >
+                <label class="">
+                    <?= $this->formCheckbox($form->get('remember_me')); ?> 
+                    <span>Manter contectado</span>
+                </label>
+            </div>
+            <?= $this->formElement($form->get('redirect_url')); ?>
+            <?= $this->formElement($form->get('csrf')) ?>
+            <button class="btn btn-dark btn-signin" type="submit">Sign in</button>
+            <?= $this->facebookSignInBtn()->render(); ?>
+        </form>
+    </div>
+    <a href="#" class=""> Esqueceu sua senha?</a>
+</div>
