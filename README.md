@@ -1,4 +1,4 @@
-# Zend Framework Skeleton Module
+# Laminas Framework Skeleton Module
 
 This is a sample skeleton module for use with
 [zend-mvc](https://docs.zendframework.com/zend-mvc) applications.
