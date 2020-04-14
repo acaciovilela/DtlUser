@@ -30,7 +30,7 @@ class LoginForm extends Form {
             'type' => 'text',
             'name' => 'email',
             'options' => [
-                'label' => 'E-mail',
+                'label' => 'E-mail:',
             ],
         ]);
 
@@ -39,7 +39,7 @@ class LoginForm extends Form {
             'type' => 'password',
             'name' => 'password',
             'options' => [
-                'label' => 'Password',
+                'label' => 'Senha:',
             ],
         ]);
 
@@ -48,7 +48,7 @@ class LoginForm extends Form {
             'type' => 'checkbox',
             'name' => 'remember_me',
             'options' => [
-                'label' => 'Remember me',
+                'label' => 'Manter Conectado',
             ],
         ]);
 
@@ -74,6 +74,7 @@ class LoginForm extends Form {
             'type' => 'submit',
             'name' => 'submit',
             'attributes' => [
+                'class' => 'btn btn-primary btn-block',
                 'value' => 'Sign in',
                 'id' => 'submit',
             ],

@@ -13,25 +13,20 @@
         <!-- Le styles -->
         <?=
                 $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
-                ->prependStylesheet($this->basePath('dartalla/css/dtl-login.css'))
-                ->prependStylesheet($this->basePath('fontawesome/css/all.min.css'))
+                ->prependStylesheet($this->basePath('dartalla/fontawesome/css/all.min.css'))
                 ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
         ?>
 
         <!-- Scripts -->
         <?=
                 $this->headScript()
-                ->prependFile($this->basePath('js/bootstrap.bundle.min.js'))
-                ->prependFile($this->basePath('bower_components/jquery/dist/jquery-3.3.1.min.js'))
+                ->prependFile($this->basePath('js/bootstrap.min.js'))
+                ->prependFile($this->basePath('js/jquery-3.4.1.min.js'))
         ?>
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="row dtl-app">
-                <div class="col-10 dtl-app-content mx-auto">
-                    <?= $this->content ?>
-                </div>
-            </div>
+        <div class="container-fluid mx-auto pt-5">
+            <?= $this->content ?>
         </div>
         <?= $this->inlineScript() ?>
     </body>
