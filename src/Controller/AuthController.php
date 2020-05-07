@@ -112,8 +112,10 @@ class AuthController extends AbstractActionController {
                     // If redirect URL is provided, redirect the user to that URL;
                     // otherwise redirect to Home page.
                     if (empty($redirectUrl)) {
+                        $this->flashMessenger()->addSuccessMessage('Bem-vindo ' . $this->identity()->getFullName() . '!');
                         return $this->redirect()->toRoute('home');
                     } else {
+                        $this->flashMessenger()->addSuccessMessage('Bem-vindo de volta ' . $this->identity()->getFullName() . '!');
                         $this->redirect()->toUrl($redirectUrl);
                     }
                 } else {
@@ -121,7 +123,6 @@ class AuthController extends AbstractActionController {
                 }
             } else {
                 $isLoginError = true;
-                var_dump($form->getMessages());exit;
             }
         }
 
